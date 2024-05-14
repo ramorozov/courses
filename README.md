@@ -15,3 +15,7 @@
 #/courses/python manage.py runserver\
 Чтобы указать конкреный порт\
 #/courses/python manage.py runserver <номер_порта>\
+
+**WSGI и ASGI**\
+WSGI - интерфейс взаимодействия между web-сервером и приложением python\
+ASGI - асинхронный интерфейс взаимодействия с серверами
