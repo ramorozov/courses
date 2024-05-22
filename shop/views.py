@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+#Импортируем модель Course
+from .models import Course
 
 # Create your views here.
 """
@@ -7,4 +9,7 @@ from django.http import HttpResponse
 при обращении на главную страницу приложения Shop
 """
 def index(request):
-    return HttpResponse("Hello from the Shop app")
+    #Получение списка курсов
+    courses = Course.objects.all()
+    #Формируем список курсов, делаем перенос и объединяем в одну строку
+    return HttpResponse(''.join([str(course) + '<br>' for course in courses]))
