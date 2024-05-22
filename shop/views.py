@@ -15,4 +15,7 @@ def index(request):
     #return HttpResponse(''.join([str(course) + '<br>' for course in courses]))
 
     #Вывод страницы шаблона
-    return render(request, 'courses.html')
+    #return render(request, 'courses.html')
+
+    #Вывод данных в шаблон courses
+    return render(request, 'courses.html', {'courses': courses})
