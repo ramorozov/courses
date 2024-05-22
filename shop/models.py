@@ -9,6 +9,10 @@ class Category(models.Model):
     title = models.CharField(max_length=255)
     #Время создания категории, дата, текущая дата генерируется автоматически
     created_at = models.DateTimeField(default=timezone.now)
+    #Отображение заголовков категорий в admin-панели
+    def __str__(self):
+        return self.title
+
 
 #Создание модели для курсов
 
@@ -24,3 +28,6 @@ class Course(models.Model):
     #будут удалятся все курсы при удалении категории
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     created_at = models.DateTimeField(default=timezone.now)
+    #Отображение заголовков категорий в admin-панели
+    def __str__(self):
+        return self.title
