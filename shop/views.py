@@ -12,4 +12,7 @@ def index(request):
     #Получение списка курсов
     courses = Course.objects.all()
     #Формируем список курсов, делаем перенос и объединяем в одну строку
-    return HttpResponse(''.join([str(course) + '<br>' for course in courses]))
+    #return HttpResponse(''.join([str(course) + '<br>' for course in courses]))
+
+    #Вывод страницы шаблона
+    return render(request, 'courses.html')
