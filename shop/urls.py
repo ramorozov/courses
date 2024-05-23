@@ -9,5 +9,7 @@ from . import views
 #приложения Shop views.index 
 #с названием 'index'
 urlpatterns = [
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    #Маршрутиризация на страницу курса по его id
+    path('<int:course_id>', views.single_course, name='single_course')
 ]

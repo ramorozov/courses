@@ -19,7 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #Маршрутиризация к приложению Shop 
-    #с включением всех маршрутов из shop.urls
+    #Маршрутиризация к приложению Shop с включением всех маршрутов из shop.urls
     path('shop/', include('shop.urls'))
 ]
