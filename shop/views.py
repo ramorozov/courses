@@ -5,7 +5,7 @@ from .models import Course
 
 # Create your views here.
 """
-Функция index отвечает за то, что будет возващаться
+Функция index отвечает за то, что будет возвращаться
 при обращении на главную страницу приложения Shop
 """
 def index(request):
@@ -19,3 +19,13 @@ def index(request):
 
     #Вывод данных в шаблон courses
     return render(request, 'courses.html', {'courses': courses})
+
+"""
+Функция single_course отвечает за то, что будет возвращаться
+при обращении на страницу курса приложения Shop
+"""
+def single_course(request, course_id):
+    #Поиск курса по primary key
+    course = Course.objects.get(pk=course_id)
+    #Рендеринг шаблона single_course.html
+    return render(request, 'single_course.html', {'course': course})
