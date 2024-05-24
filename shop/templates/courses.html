@@ -22,7 +22,10 @@
         {% for course in courses %}
         <tr>
             <td>
-                <a href={{course.id}}>{{ course.title }}</a>
+                <!-- Абсолютный путь -->
+                <a href={% url "single_course" course.id %}>{{ course.title }}</a>                
+                <!-- Относительный путь -->
+                <!-- <a href={{course.id}}>{{ course.title }}</a> -->
             </td>
             <td>{{ course.category }}</td>
             <td>{{ course.price }}</td>
