@@ -1,0 +1,18 @@
+<!-- Шаблон страницы курса -->
+
+<!-- Расширение шаблона base -->
+{% extends "base.html" %}
+
+<!-- Блок заголовка страницы -->
+{% block title %}{{course.title}}{% endblock %}
+
+<!-- Начало включения в шаблон content -->
+{% block content %}
+<h1 class="mt-5">{{course.title}}</h1>
+<br>
+<h2>Category: {{course.category}}</h2>
+<p>Price: {{course.price}}</p>
+<p>Students Quantity: {{course.students_qty}}</p>
+<button class="btn btn-primary">Buy</button>
+<!-- Конец включения в шаблон content -->
+{% endblock %}
