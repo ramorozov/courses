@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, Http404
 #Импортируем модель Course
 from .models import Course
 
@@ -25,7 +25,14 @@ def index(request):
 при обращении на страницу курса приложения Shop
 """
 def single_course(request, course_id):
-    #Поиск курса по primary key
-    course = Course.objects.get(pk=course_id)
-    #Рендеринг шаблона single_course.html
-    return render(request, 'single_course.html', {'course': course})
+    try:
+        #Поиск курса по primary key
+        course = Course.objects.get(pk=course_id)
+        #Рендеринг шаблона single_course.html
+        return render(request, 'single_course.html', {'course': course})
+    #Ошибка 404 если урс не найден
+    except Course.DoesNotExist:
+        raise Http404()
+    #Ошибка 404, способ - 2
+    #course = get_object_or_404(Courses, pk=course_id)
+    #return render(request, 'single_course.html', {'course': course})
