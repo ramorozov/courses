@@ -22,8 +22,10 @@
         {% for course in courses %}
         <tr>
             <td>
+                <!-- Роутинг с учетом имени приложения -->
+                <a href={% url "shop:single_course" course.id %}>{{ course.title }}</a>
                 <!-- Абсолютный путь -->
-                <a href={% url "single_course" course.id %}>{{ course.title }}</a>                
+                {% comment %} <a href={% url "single_course" course.id %}>{{ course.title }}</a> {% endcomment %}             
                 <!-- Относительный путь -->
                 <!-- <a href={{course.id}}>{{ course.title }}</a> -->
             </td>
