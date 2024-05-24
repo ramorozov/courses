@@ -22,7 +22,7 @@
         {% for course in courses %}
         <tr>
             <td>
-                <a href="">{{ course.title }}</a>
+                <a href={{course.id}}>{{ course.title }}</a>
             </td>
             <td>{{ course.category }}</td>
             <td>{{ course.price }}</td>
