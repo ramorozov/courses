@@ -18,7 +18,7 @@ def index(request):
     #return render(request, 'courses.html')
 
     #Вывод данных в шаблон courses
-    return render(request, 'courses.html', {'courses': courses})
+    return render(request, 'shop/courses.html', {'courses': courses})
 
 """
 Функция single_course отвечает за то, что будет возвращаться
@@ -29,7 +29,7 @@ def single_course(request, course_id):
         #Поиск курса по primary key
         course = Course.objects.get(pk=course_id)
         #Рендеринг шаблона single_course.html
-        return render(request, 'single_course.html', {'course': course})
+        return render(request, 'shop/single_course.html', {'course': course})
     #Ошибка 404 если урс не найден
     except Course.DoesNotExist:
         raise Http404()
