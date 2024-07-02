@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #Регистрация приложения Shop
-    'shop.apps.ShopConfig'
+    'shop.apps.ShopConfig',
+    #Регистрация приложения Api
+    'api.apps.ApiConfig'
 ]
 
 MIDDLEWARE = [

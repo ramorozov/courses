@@ -75,3 +75,13 @@ ASGI - асинхронный интерфейс взаимодействия с
 
 **Получение списка курсов из БД через shell**\
 #[course.title for course in Course.objects.all()]
+
+
+# API
+## Создание приложения
+
+**Инсталяция пакета django-tastypie**\
+#pipenv install django-tastypie
+
+**Создание приложения api**\
+#/courses/python manage.py startapp api\
