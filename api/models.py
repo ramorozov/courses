@@ -1,5 +1,7 @@
 from tastypie.resources import ModelResource
 from shop.models import Category, Course
+from tastypie.authorization import Authorization
+from .authentication import CustomAuthentication
 
 # Create your models here.
 class CategoryResource(ModelResource):
@@ -17,3 +19,18 @@ class CourseResource(ModelResource):
         resource_name = 'courses'
         #Разрешене только на чтение, запись, удаление (метод get, post, delete)
         allowed_mathods = ['get', 'post', 'delete']
+        #Добавляем аутентификацию и авторизацию
+        authentication = CustomAuthentication()
+        authorization = Authorization()
+
+
+    '''Вставка категории курса в запросе'''
+    def hydrate(self, bundle):
+        bundle.obj.category_id = bundle.data['category_id']
+        return bundle
+    
+    '''Получение категории курса в запросе'''
+    def dehydrate(self, bundle):
+        bundle.data['category_id'] = bundle.obj.category
+        return bundle
+

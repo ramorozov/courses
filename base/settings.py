@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     #Регистрация приложения Shop
     'shop.apps.ShopConfig',
     #Регистрация приложения Api
-    'api.apps.ApiConfig'
+    'api.apps.ApiConfig',
+    #Регистрируем приложение tastypie для аутентификации и авторизации
+    'tastypie'
 ]
 
 MIDDLEWARE = [
