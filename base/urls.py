@@ -24,5 +24,6 @@ urlpatterns = [
     #Маршрутизация приложения Api
     #path('api/', include(course_resource.urls)),
     #path('api/', include(category_resource.urls))
-    path('api/', include('api.urls'))
+    path('api/', include('api.urls')),
+    path('', include('mainpage.urls'))
 ]

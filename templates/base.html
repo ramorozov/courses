@@ -15,7 +15,12 @@
     <!-- Блок навигации -->
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
-            <a href={% url "shop:index" %} class="navbar-brand">Courses Shop</a>
+            <a href={% url "mainpage:index" %} class="navbar-brand">Main</a>
+            <span>
+                <a href={% url "shop:index" %} class="navbar-brand">Courses shop</a>
+                <a href="/api/v1/" class="navbar-brand">API</a>
+                <a href="/admin/" class="navbar-brand">Admin</a>
+            </span>
         </div>
     </nav>
     <!-- Блок влючения шаблонов -->

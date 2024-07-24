@@ -1,0 +1,41 @@
+<!-- HTML шаблон главной страницы -->
+
+<!-- Расширение шаблона base -->
+{% extends "base.html" %}
+
+<!-- Блок заголовка страницы -->
+{% block title %}Main{% endblock %}
+
+<!-- Начало включения в шаблон content -->
+{% block content %}
+<div class="row mt-5">
+    <div class="col-sm-4 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Courses shop page</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href={% url "shop:index" %} class="btn btn-primary">Shop</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">API page</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="/api/v1/" class="btn btn-primary">API</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Admin page</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="/admin/" class="btn btn-primary">Admin</a>
+          </div>
+        </div>
+      </div>
+  </div>
+<!-- Конец включения в шаблон content -->
+{% endblock %}
