@@ -19,6 +19,8 @@ class CourseResource(ModelResource):
         resource_name = 'courses'
         #Разрешене только на чтение, запись, удаление (метод get, post, delete)
         allowed_mathods = ['get', 'post', 'delete']
+        #Исключение полей из ответа api
+        excludes = ['reviews_qty','students_qty']
         #Добавляем аутентификацию и авторизацию
         authentication = CustomAuthentication()
         authorization = Authorization()
@@ -31,6 +33,6 @@ class CourseResource(ModelResource):
     
     '''Получение категории курса в запросе'''
     def dehydrate(self, bundle):
-        bundle.data['category_id'] = bundle.obj.category
+        bundle.data['category'] = bundle.obj.category
         return bundle
 
